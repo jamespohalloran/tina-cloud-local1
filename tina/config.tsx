@@ -13,6 +13,15 @@ const config = defineConfig({
     process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
     process.env.HEAD!, // Netlify branch env
   token: process.env.TINA_TOKEN!,
+  ui: {
+    // Eg. If you're deplying to Vercel, and your repo name is 'my-app', Vercel's preview URL would be based on the branch:
+    previewUrl: (context) => {
+      // `https://<project-name>-git-<branch-name>.vercel.app`
+      return {
+        url: `https://tina-cloud-local-git-${context.branch}-jamespohalloran.vercel.app`,
+      };
+    },
+  },
   search: {
     tina: {
       indexerToken: process.env.TINA_SEARCH_TOKEN,
