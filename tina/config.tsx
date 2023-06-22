@@ -18,7 +18,10 @@ const config = defineConfig({
     previewUrl: (context) => {
       // `https://<project-name>-git-<branch-name>.vercel.app`
       return {
-        url: `https://tina-cloud-local-git-${context.branch}-jamespohalloran.vercel.app`,
+        url: `https://tina-cloud-local-git-${context.branch.replace(
+          "/",
+          "-"
+        )}-jamespohalloran.vercel.app`,
       };
     },
   },
