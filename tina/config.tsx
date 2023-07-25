@@ -30,18 +30,6 @@ const config = defineConfig({
       indexerToken: process.env.TINA_SEARCH_TOKEN,
     },
   },
-  media: {
-    // If you wanted cloudinary do this
-    // loadCustomStore: async () => {
-    //   const pack = await import("next-tinacms-cloudinary");
-    //   return pack.TinaCloudCloudinaryMediaStore;
-    // },
-    // this is the config for the tina cloud media store
-    tina: {
-      publicFolder: "public",
-      mediaRoot: "uploads",
-    },
-  },
   tinaioConfig: {
     frontendUrlOverride:
       process.env.NEXT_PUBLIC_TINA_URL || "http://localhost:3002",
